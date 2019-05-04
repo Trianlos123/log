@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Loginn.Views.LoginPage"
+             Title="Login">
+    <ContentPage.Content>
+        <Grid>
+
+            <!--<Image Source="micropos.jpg" Aspect="AspectFill"/>-->
+            <BoxView Color="Blue" Opacity="0.7"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" Source="micropos.png" Margin="0,50,0,30" HeightRequest="100" WidthRequest="100"/>
+
+                <StackLayout 
+                    Grid.Row="1" 
+                    Padding="30,20">
+                    <Entry 
+                        Placeholder="Usuario" 
+                        PlaceholderColor="White" 
+                        TextColor="White"/>
+                    <Entry Placeholder="Contraseña" 
+                           PlaceholderColor="White" 
+                           IsPassword="True" 
+                           TextColor="White"/>
+                    <StackLayout 
+                         Orientation="Horizontal">
+                        <Label
+                            HorizontalOptions="StartAndExpand"
+                            Text="Recordar"
+                            VerticalOptions="Center">
+                        </Label>
+                        <Switch 
+                            HorizontalOptions="End">
+                        </Switch>
+                    </StackLayout>
+                    <Button 
+                        Text="Iniciar Sesión" 
+                        BackgroundColor="White" 
+                        BorderRadius="20" 
+                        TextColor="Blue"/>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
