@@ -2,13 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Loginn.Views.LoginPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="Login">
     <ContentPage.Content>
+        <ScrollView>
         <Grid>
-
             <!--<Image Source="micropos.jpg" Aspect="AspectFill"/>-->
             <BoxView Color="Blue" Opacity="0.7"/>
-
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -28,8 +28,12 @@
                            PlaceholderColor="White" 
                            IsPassword="True" 
                            TextColor="White"/>
+                    <ActivityIndicator
+                        VerticalOptions="CenterAndExpand">
+                    </ActivityIndicator>
                     <StackLayout 
-                         Orientation="Horizontal">
+                         Orientation="Horizontal"
+                        VerticalOptions="CenterAndExpand">
                         <Label
                             HorizontalOptions="StartAndExpand"
                             Text="Recordar"
@@ -43,9 +47,11 @@
                         Text="Iniciar Sesión" 
                         BackgroundColor="White" 
                         BorderRadius="20" 
-                        TextColor="Blue"/>
+                        TextColor="Blue"
+                        VerticalOptions="CenterAndExpand"/>
                 </StackLayout>
             </Grid>
         </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
