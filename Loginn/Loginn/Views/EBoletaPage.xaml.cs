@@ -16,5 +16,6 @@ namespace Loginn.Views
 		{
 			InitializeComponent ();
 		}
-	}
+
+    }
 }

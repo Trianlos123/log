@@ -5,39 +5,45 @@
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="Boleta Electrónica">
     <ContentPage.Content>
-        <StackLayout
-            BindingContext="{Binding EBoleta}"
-            Padding="10">
-            <Button
-                BorderRadius="20"
-                Command="{Binding ScanCommand}"
-                IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                Text="Abrir Scan"
-                VerticalOptions="CenterAndExpand">
-            </Button>
-            <Entry
-                Text="{Binding Code, Mode=TwoWay}">
-            </Entry>
-            <ListView
-                ItemsSource="{Binding EBoleta}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell
-                            Text="{Binding Nombre}"
-                            Detail="Cantidad/Precio">
-                        </TextCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <Stepper
-                Value="{Binding Stepper, Mode=TwoWay}"
-                Minimum="1"
-                VerticalOptions="Center">
-            </Stepper>
-            <Label
-                Text="{Binding ValorStepper, Mode=TwoWay}"
-                VerticalOptions="Center">
-            </Label>
-        </StackLayout>
+            <StackLayout
+                BindingContext="{Binding EBoleta}"
+                Padding="10">
+                <Button
+                    BorderRadius="20"
+                    Command="{Binding ScanCommand}"
+                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                    Text="Abrir Scan"
+                    VerticalOptions="Center">
+                </Button>
+                <Entry
+                    Text="{Binding Code, Mode=TwoWay}">
+                </Entry>
+                <ListView
+                    ItemsSource="{Binding EBoleta}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell
+                                Text="{Binding Nombre}"
+                                Detail="Cantidad/Precio">
+                            </TextCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout
+                    Orientation="Horizontal">
+                    <Stepper
+                        Value="{Binding Stepper, Mode=TwoWay}"
+                        HorizontalOptions="StartAndExpand"
+                        Minimum="1"
+                        VerticalOptions="Center"
+                        x:Name="Steper">
+                    </Stepper>
+                    <Label
+                        HorizontalOptions="End"
+                        Text="{Binding Source={x:Reference Steper},Path=Value}"
+                        VerticalOptions="Center">
+                    </Label>
+                </StackLayout>
+            </StackLayout>
     </ContentPage.Content>
 </ContentPage>

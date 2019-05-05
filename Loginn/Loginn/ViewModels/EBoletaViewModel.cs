@@ -45,7 +45,10 @@ namespace Loginn.ViewModels
         #endregion
 
         #region Constructor
-
+        public EBoletaViewModel()
+        {
+            this.ValorStepper = "1";
+        }
         #endregion
 
         #region Commands
