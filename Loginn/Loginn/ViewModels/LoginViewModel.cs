@@ -99,6 +99,9 @@ namespace Loginn.ViewModels
         {
             this.IsRemember = true;
             this.IsEnabled = true;
+            this.User = "micropos";
+            this.Password = "micropos";
+
         }
         #endregion
     }

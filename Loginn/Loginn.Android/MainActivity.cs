@@ -20,6 +20,7 @@ namespace Loginn.Droid
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+            ZXing.Mobile.MobileBarcodeScanner.Initialize(Application);
         }
     }
 }
