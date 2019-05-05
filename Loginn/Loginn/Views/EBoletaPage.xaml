@@ -22,10 +22,31 @@
                     ItemsSource="{Binding EBoleta}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell
+                            <ViewCell>
+                                <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    Grid.Column="0"
+                                    Text="{Binding Nombre}">
+                                </Label>
+                                <Label
+                                    Grid.Column="1"
+                                    Text="Cantidad">
+                                </Label>
+                                <Label
+                                    Grid.Column="2"
+                                    Text="Precio">
+                                </Label>
+                            </Grid>
+                            </ViewCell>
+                            <!--<TextCell
                                 Text="{Binding Nombre}"
                                 Detail="Cantidad/Precio">
-                            </TextCell>
+                            </TextCell>-->
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
