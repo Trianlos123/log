@@ -5,7 +5,8 @@
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="Login">
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView
+            BindingContext="{Binding Login}">
         <Grid>
             <!--<Image Source="micropos.jpg" Aspect="AspectFill"/>-->
             <BoxView Color="Blue" Opacity="0.7"/>
@@ -22,13 +23,16 @@
                     Padding="30,20">
                     <Entry 
                         Placeholder="Usuario" 
-                        PlaceholderColor="White" 
+                        PlaceholderColor="White"
+                        Text="{Binding User, Mode=TwoWay}"
                         TextColor="White"/>
                     <Entry Placeholder="Contraseña" 
                            PlaceholderColor="White" 
                            IsPassword="True" 
+                           Text="{Binding Password, Mode=TwoWay}"
                            TextColor="White"/>
                     <ActivityIndicator
+                        IsRunning="{Binding IsRunning, Mode=TwoWay}"
                         VerticalOptions="CenterAndExpand">
                     </ActivityIndicator>
                     <StackLayout 
@@ -39,14 +43,17 @@
                             Text="Recordar"
                             VerticalOptions="Center">
                         </Label>
-                        <Switch 
+                        <Switch
+                            IsToggled="{Binding IsRemember, Mode=TwoWay}"
                             HorizontalOptions="End">
                         </Switch>
                     </StackLayout>
                     <Button 
-                        Text="Iniciar Sesión" 
+                        Command="{Binding LoginCommand}"
                         BackgroundColor="White" 
                         BorderRadius="20" 
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Text="Iniciar Sesión" 
                         TextColor="Blue"
                         VerticalOptions="CenterAndExpand"/>
                 </StackLayout>
